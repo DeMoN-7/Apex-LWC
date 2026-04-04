@@ -1,0 +1,15 @@
+<template>
+    
+        <template for:each={users} for:item="user">
+            <div key={user.Id}>
+                <img src={user.MediumPhotoUrl}
+                width="100"
+                height="100"
+                data-id={user.id}
+                onclick={handleClick}
+                />
+
+            </div>
+       
+    </template>
+</template>

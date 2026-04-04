@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="card">
+      <div >
+       <lightning-button 
+         label={buttonValue} 
+         onclick={handleClick} 
+       > {buttonValue}</lightning-button>
+      </div>
+      
+     <template if:true={show}>
+            <p>This is visible</p>
+     </template>
+      
+    </lightning-card>
+</template>

@@ -1,0 +1,30 @@
+<template>
+    <lightning-card icon-name="standard:account" variant="base" title="Crud">
+
+        <div>
+            <lightning-input type="text" label="ID" disabled></lightning-input>
+            <lightning-input type="text" label="Name" onchange={handleChange}>
+            </lightning-input>
+            <lightning-button variant="base" label="Reset" type="reset"></lightning-button>
+            <lightning-button variant="base" label="Submit" onclick={handleClick}></lightning-button>
+
+        </div>
+    </lightning-card>
+    <lightning-card icon-name="standard:account" variant="base">
+        <div slot="title">
+            Display
+        </div>
+
+        <div>
+            <lightning-input 
+              type="text"
+              value={accountName}
+              disabled
+            ></lightning-input>
+            <br>
+            {accountId}
+        </div>
+    </lightning-card>
+
+
+</template>

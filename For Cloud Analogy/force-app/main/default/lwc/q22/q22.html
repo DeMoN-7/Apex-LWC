@@ -1,0 +1,20 @@
+<template>
+    <lightning-card icon-name="standard:account" variant="base">
+      <div slot="title">
+          sObject Input
+      </div>
+      
+      <div>
+       <lightning-input 
+         type="text"
+         label="Enter sObject Api Name"
+         onchange={changeHandler}
+       ></lightning-input>
+       <lightning-input 
+         type="text"
+         label="Enter fields you want to display in csv fromat"
+         onkeyup={csvSeprater}
+       ></lightning-input> 
+      </div>
+    </lightning-card>
+</template>

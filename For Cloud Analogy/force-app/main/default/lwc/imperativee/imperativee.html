@@ -1,0 +1,17 @@
+<template>
+    <lightning-card icon-name="standard:account" variant="base" title="Practie Imperative">
+      
+      <div>
+        <lightning-button 
+          variant="base"
+          label="Click me"
+          onclick={handleClick}
+        ></lightning-button>
+        <lightning-datatable
+          key-field="id"
+          data={data}
+          columns={columns}
+        ></lightning-datatable>
+      </div>
+    </lightning-card>
+</template>

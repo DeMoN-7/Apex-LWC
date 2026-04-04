@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="To do List">
+     
+      <div>
+        <lightning-input type="text" label="Enter Task" onchange={saveValue}></lightning-input>
+        <lightning-button 
+          label="ADD" 
+          variant="brand" 
+          onclick={addTask} 
+        ></lightning-button>
+        <lightning-button 
+          label="Delete" 
+          variant="brand" 
+          onclick={removeTask} 
+        ></lightning-button>
+        
+      </div>
+<div>
+
+    <ul>
+        <template for:each={task} for:item="task">
+            <li key={task}>{task}</li>
+    </template>
+    </ul>
+</div>
+
+    </lightning-card>
+</template>

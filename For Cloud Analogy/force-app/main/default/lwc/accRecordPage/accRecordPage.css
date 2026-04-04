@@ -1,0 +1,19 @@
+.account-box {
+    background-color: #f4f6f9; /* soft light gray */
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid #6592e6;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    width: 30%;
+}
+
+.account-box p {
+    margin: 6px 0;
+    font-size: 14px;
+    color: #2e2e2e;
+}
+
+.account-box strong {
+    color: #1b5dab; /* Salesforce-like blue */
+    margin-right: 6px;
+}

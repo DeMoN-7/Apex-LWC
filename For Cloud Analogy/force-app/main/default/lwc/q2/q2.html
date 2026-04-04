@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Enter Detail">
+        <div>
+            <lightning-input type="text" label="FirstName" onchange={saveValue}></lightning-input>
+            <lightning-input type="text" label="LastName" onchange={saveValue}></lightning-input>
+            <lightning-input type="email" label="Email" onchange={saveValue}></lightning-input>
+            <lightning-input type="phone" label="Phone" onchange={saveValue}></lightning-input>
+            <lightning-input type="text" label="Title" onchange={saveValue}></lightning-input>
+        </div>
+        <lightning-button 
+          label="SAVE" 
+          variant="brand" 
+          onclick={debugLog} 
+        ></lightning-button>
+    </lightning-card>
+
+</template>

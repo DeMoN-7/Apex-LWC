@@ -1,0 +1,12 @@
+<template>
+  <lightning-card icon-name="standard:account" variant="base" title="Account Table for q12">
+
+    <div>
+      <lightning-datatable key-field="Id" data={data1} columns={column} onrowselection={handleRowSelection}>
+      </lightning-datatable>
+
+      <lightning-button variant="brand" label="Delete Selected" onclick={deleteRec}>
+      </lightning-button>
+    </div>
+  </lightning-card>
+</template>

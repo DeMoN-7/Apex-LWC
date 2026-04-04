@@ -1,0 +1,22 @@
+<template>
+    <lightning-card icon-name="standard:account" variant="base" title="Acc Details">
+
+        <div class="account-box">
+            <p><strong>Name:</strong> {accName}</p>
+            <p><strong>Industry:</strong> {accIndustry}</p>
+            <p><strong>Phone:</strong> {accPhone}</p>
+            <p><strong>Type:</strong> {accType}</p>
+        </div>
+    </lightning-card>
+    <template if:true={show}>
+
+        <lightning-card icon-name="standard:account" variant="base">
+
+            <div>
+                <lightning-datatable key-field="id" data={contacts} columns={column}></lightning-datatable>
+
+            </div>
+        </lightning-card>
+    </template>
+
+</template>

@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Calculator">
+        <div>
+            <lightning-input 
+              type="text"
+              label="Enter some text"
+              onchange={handleInput}
+            ></lightning-input>
+            <lightning-button 
+              label="Click me" 
+              onclick={handleClick} 
+            ></lightning-button>
+            <p>{result}</p>
+        </div>
+    </lightning-card>
+</template>

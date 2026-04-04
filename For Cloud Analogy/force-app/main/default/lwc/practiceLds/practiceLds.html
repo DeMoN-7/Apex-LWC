@@ -1,0 +1,13 @@
+<template>
+    <lightning-record-edit-form density="compact" object-api-name="Account" onsuccess={handleSuccess}>
+        <lightning-input-field field-name={NameField} label="Name"></lightning-input-field>
+        <lightning-input-field field-name={PhoneField} label="Phone"></lightning-input-field>
+        <lightning-input-field field-name={TypeField} label="Type"></lightning-input-field>
+        <lightning-input-field field-name={AnnualRevenue} label="Annual Revenue"></lightning-input-field>
+        <lightning-input-field field-name={Industry} label="Industry"></lightning-input-field>
+        
+        <lightning-button label="Save" variant="brand" type="submit"></lightning-button>
+        <lightning-button label="Reset" variant="brand" type="reset"></lightning-button>
+    </lightning-record-edit-form>
+
+</template>
