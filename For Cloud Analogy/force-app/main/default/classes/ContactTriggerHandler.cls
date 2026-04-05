@@ -205,4 +205,59 @@ public class ContactTriggerHandler {
         update con;
     }
     
+    
+    public static void forPract(List<Contact> conList, Map<Id, Contact> oldMap) {
+        Set<Id> accId = new Set<Id>();
+        
+        if(conList != null){
+            
+            for(Contact con : conList){
+                if(Trigger.isInsert || Trigger.isUndelete){
+                    if(con.AccountId != null){
+                        accId.add(con.AccountId);
+                    }
+                }
+                else if(Trigger.isUpdate && con.AccountId != oldMap.get(con.Id).AccountId){
+                    
+                    if(con.AccountId != null){
+                        accId.add(con.AccountId);
+                    }
+                    
+                    if(oldMap.get(con.Id).AccountId != null){
+                        accId.add(oldMap.get(con.Id).AccountId);
+                    }
+                }
+                else if(Trigger.isDelete){
+                    if(con.AccountId != null){
+                        accId.add(con.AccountId);
+                    }
+                }
+            }
+            
+            if(!accId.isEmpty()){
+                List<Account> accToUpdate = new List<Account>();
+                Map<Id, Integer> countMap = new Map<Id, Integer>();
+                
+                for(AggregateResult agr : [
+                    SELECT AccountId acid, COUNT(Id) cou
+                    FROM Contact
+                    WHERE AccountId IN :accId
+                    GROUP BY AccountId
+                ]){
+                    countMap.put((Id)agr.get('acid'), (Integer)agr.get('cou'));
+                }
+                
+                for(Id idd : accId){
+                    Integer count = countMap.containsKey(idd) ? countMap.get(idd) : 0;
+                    Account acc = new Account(Id = idd, forPrac__c = count);
+                    accToUpdate.add(acc);
+                }
+                
+                if(!accToUpdate.isEmpty()){
+                    Database.update(accToUpdate, false);
+                }
+            }
+        }
+    }
+    
 }
